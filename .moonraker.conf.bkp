@@ -65,3 +65,9 @@ install_script = install.sh
 managed_services = 
 	moonraker-obico
 
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
