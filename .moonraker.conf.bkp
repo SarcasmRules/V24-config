@@ -21,6 +21,10 @@ cors_domains =
 	*://app.fluidd.xyz
 	*.local:7123
 
+[spoolman]
+server = http://192.168.10.5:8000
+sync_rate = 5
+
 [octoprint_compat]
 
 [history]
@@ -35,17 +39,18 @@ channel = stable
 repo = fluidd-core/fluidd
 path = ~/fluidd
 
+[update_manager klipper-macros]
+type = git_repo
+origin = https://github.com/jschuh/klipper-macros.git
+path = ~/printer_data/config/klipper-macros
+primary_branch = main
+is_system_service = False
+managed_services = klipper
+
 [update_manager led_effect]
 type = git_repo
 path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
-is_system_service = False
-
-[update_manager pgcode]
-type = git_repo
-primary_branch = main
-origin = https://github.com/Kragrathea/pgcode.git
-path = ~/pgcode
 is_system_service = False
 
 [update_manager crowsnest]
@@ -64,10 +69,4 @@ requirements = requirements.txt
 install_script = install.sh
 managed_services = 
 	moonraker-obico
-
-[update_manager mainsail]
-type = web
-channel = stable
-repo = mainsail-crew/mainsail
-path = ~/mainsail
 
